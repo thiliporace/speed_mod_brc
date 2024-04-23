@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using Reptile;
 
-namespace SafeProjectName.Patches
+namespace SpeedMod.Patches
 {
     internal static class PlayerPatch
     {
@@ -9,7 +9,7 @@ namespace SafeProjectName.Patches
         [HarmonyPostfix]
         private static void Player_Init_Postfix(Player __instance)
         {
-        if (!__instance.isAI) { SafeProjectNamePlugin.player = __instance; }
+        if (!__instance.isAI) { SpeedMod.player = __instance; }
     }
     }
 }

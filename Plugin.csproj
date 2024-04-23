@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
@@ -11,7 +11,7 @@
   </PropertyGroup>
   
   <PropertyGroup>
-	  <ManagedPath>$(BRCPath)/Bomb Rush Cyberfunk_Data/Managed</ManagedPath>
+	  <ManagedPath>D:\SteamLibrary\steamapps\common\BombRushCyberfunk\Bomb Rush Cyberfunk_Data\Managed</ManagedPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,9 +37,10 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <PropertyGroup>
       <!-- intentionally no newline before REM so it appears in IDE "Error" pane -->
-      <Command>REM Copying plugin to BepInEx directory. This may fail if game is running; close game and try again
-        xcopy /q/y/i "$(TargetDir)" "$(BepInExDirectory)\plugins\SafeProjectName" /E /H
-      </Command>
+      <Command>
+		  REM Copying plugin to BepInEx directory. This may fail if game is running; close game and try again
+		  xcopy /q/y/i "$(TargetDir)" "C:\Users\mlipo\AppData\Roaming\r2modmanPlus-local\BombRushCyberfunk\profiles\Default\BepInEx\plugins\SafeProjectName" /E /H
+	  </Command>
     </PropertyGroup>
     <Exec Command="$(Command)" />
   </Target>
