@@ -5,6 +5,7 @@ using HarmonyLib;
 using UnityEngine;
 using SpeedMod.Patches;
 using Reptile;
+using System;
 
 namespace SpeedMod
 {
@@ -29,18 +30,32 @@ namespace SpeedMod
 
         class ChangeSpeed
         {
-            [HarmonyPatch(typeof(MovementStats), nameof(MovementStats))]
-            [HarmonyPostfix]
+            /*[HarmonyPatch(typeof(MovementStats), nameof(MovementStats))]
+            [HarmonyPrefix]
 
-            public static void Postfix(MovementStats stats)
+            public static void Prefix(MovementStats stats)
             {
-                stats.walkSpeed = 150;
-                stats.slideDeccHighSpeed = 200;
-                stats.grindSpeed = 200;
-                stats.groundAcc = 4;
-                stats.airAcc = 4;
-                stats.runSpeed = 300;
+                stats.walkSpeed = 999;
+                stats.slideDeccHighSpeed = 999;
+                stats.grindSpeed = 999;
+                stats.groundAcc = 8;
+                stats.airAcc = 8;
+                stats.runSpeed = 999;
                 stats.rotSpeedInAir = 8;
+            }*/
+
+            //TODO: Continuar depois
+            [HarmonyPatch(typeof(Player), nameof(Player.Move))]
+            [HarmonyPrefix]
+
+           public static void Prefix(Player __instance)
+            {
+                if (__instance.targetMovement == global::Reptile.Player.MovementType.RUNNING)
+                {
+                    __instance.SetForwardSpeed(1000);
+                }
+                
+
             }
         }
     }

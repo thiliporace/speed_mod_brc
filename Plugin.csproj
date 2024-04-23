@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
-    <AssemblyName>SafeProjectName</AssemblyName>
-	<RootNamespace>SafeProjectName</RootNamespace>
+    <AssemblyName>SpeedMod</AssemblyName>
+	<RootNamespace>SpeedMod</RootNamespace>
     <Description></Description>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -39,7 +39,7 @@
       <!-- intentionally no newline before REM so it appears in IDE "Error" pane -->
       <Command>
 		  REM Copying plugin to BepInEx directory. This may fail if game is running; close game and try again
-		  xcopy /q/y/i "$(TargetDir)" "C:\Users\mlipo\AppData\Roaming\r2modmanPlus-local\BombRushCyberfunk\profiles\Default\BepInEx\plugins\SafeProjectName" /E /H
+		  xcopy /q/y/i "$(TargetDir)" "C:\Users\mlipo\AppData\Roaming\r2modmanPlus-local\BombRushCyberfunk\profiles\Default\BepInEx\plugins\SpeedMod" /E /H
 	  </Command>
     </PropertyGroup>
     <Exec Command="$(Command)" />
